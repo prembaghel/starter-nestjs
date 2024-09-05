@@ -19,7 +19,7 @@ export class CreaturesController {
   @Put(':id/update')
   async update(@Param('id') id, @Body() creatureData: Creature): Promise<any> {
       creatureData.id = Number(id);
-      console.log('Update #' + creatureData.id)
+      console.log('Update #' + creatureData.id);
       return this.creaturesService.update(creatureData);
   }  
 

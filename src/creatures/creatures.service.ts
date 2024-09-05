@@ -2,6 +2,12 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, UpdateResult, DeleteResult } from 'typeorm';
 import { Creature } from './creature.entity';
+import { createClient } from '@supabase/supabase-js';
+
+// Initialize Supabase client
+const supabaseUrl = 'https://<your-project-url>.supabase.co';
+const supabaseKey = '<your-anon-public-key>';
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 @Injectable()
 export class CreaturesService {
