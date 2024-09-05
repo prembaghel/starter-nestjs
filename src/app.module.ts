@@ -10,7 +10,6 @@ import { AppDataSource } from './typeorm.config';
 @Module({
   imports: [
     TypeOrmModule.forRoot(AppDataSource.options),
-    
     ContactsModule,
     BlogsModule,
     CreaturesModule,],
