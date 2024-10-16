@@ -7,7 +7,7 @@ export const AppDataSource = new DataSource({
   username: process.env.DB_USERNAME,        // Supabase username (usually 'postgres')
   password: process.env.DB_PASSWORD, 
   database: process.env.DB_DATABASE,        //'postgres',
-  synchronize: true,                        // Use true for dev environment only
+  synchronize: false,                        // Use true for dev environment only
   entities: ['dist/**/*.entity.js'],        // Path to your entities
   migrations: ['dist/migrations/*.js'],
 });
