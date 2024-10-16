@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, UpdateResult, DeleteResult } from 'typeorm';
 import { Creature } from './creature.entity';
-import { createClient } from '@supabase/supabase-js';
+//import { createClient } from '@supabase/supabase-js';
 
 @Injectable()
 export class CreaturesService {
@@ -19,8 +19,9 @@ export class CreaturesService {
     return await this.creatureRepository.save(creature);
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} creature`;
+  async findOne(id: number) {
+    return await this.creatureRepository.findOneBy({id});
+    //return `This action returns a #${id} creature`;
   }
 
   async update(creature: Creature): Promise<UpdateResult> {
